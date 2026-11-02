@@ -20,17 +20,20 @@ npm run dev
 
 Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
-## Screenshots (in place)
+## Screenshots
 
-With the dev server running:
+Captured from the local demo (`docs/screenshots/`):
 
-1. Complete onboarding → capture **Dashboard** (welcome + today’s session + weight chart).
-2. Open **Programs** → capture template grid + **Coach Builder** dialogue.
-3. **My Numbers** → log a working-weight bench set → capture estimated 1RM + chart.
-4. **Train** → finish a session → capture celebration toast + changelog entry.
-5. **Habit Lab** → apply a research update → capture applied state.
-
-Drop images into `docs/screenshots/` and link them here when ready.
+| Step | File |
+| --- | --- |
+| Onboarding baseline | `01-onboarding-baseline.webp` |
+| Dashboard welcome + predictor | `02-dashboard-welcome.webp` |
+| Program activated | `03-program-activated.webp` |
+| My Numbers + e1RM | `04-my-numbers-entries.webp` |
+| Workout complete | `05-workout-complete.webp` |
+| Adaptation changelog | `06-dashboard-changelog.webp` |
+| Habit Lab apply | `07-habit-lab-research-applied.webp` |
+| Coach Builder | `08-coach-builder-dialogue.webp` |
 
 ## 3-minute demo script
 
