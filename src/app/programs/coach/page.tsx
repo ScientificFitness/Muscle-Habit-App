@@ -17,13 +17,15 @@ export default function CoachBuilderPage() {
   const [builder, setBuilder] = useState<CoachBuilderState | null>(null);
   const [savedId, setSavedId] = useState<string | null>(null);
 
+  // Init once when profile is ready — do not reset on later profile patches
+  // (weigh-ins / settings updates were wiping mid-dialogue).
   useEffect(() => {
-    if (!state.profile) return;
+    if (!state.profile || builder) return;
     const init = initialCoachState(state.profile);
     setBuilder(init);
     setCoachDraft(init.messages);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.profile]);
+  }, [state.profile, builder]);
 
   if (!state.profile) {
     return (
