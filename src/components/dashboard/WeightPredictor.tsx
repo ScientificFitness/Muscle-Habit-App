@@ -3,11 +3,10 @@
 import { useApp } from "@/context/AppContext";
 import { projectWeight } from "@/lib/formulas";
 import {
-  Area,
   CartesianGrid,
-  ComposedChart,
   Legend,
   Line,
+  LineChart,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -29,8 +28,7 @@ export function WeightPredictor() {
     projected: p.projected,
     low: p.low,
     high: p.high,
-    band: p.high - p.low,
-    actual: p.actual,
+    actual: p.actual ?? null,
   }));
 
   return (
@@ -41,17 +39,14 @@ export function WeightPredictor() {
           <p className="text-sm text-[var(--mid-slate)] mt-1">
             12-week projection with confidence band
             {!goalIsRealistic && (
-              <>
-                {" "}
-                · healthy 12-week target ~{realisticGoalKg} kg
-              </>
+              <> · healthy 12-week target ~{realisticGoalKg} kg</>
             )}
           </p>
         </div>
       </div>
       <div className="mt-4 h-64 w-full">
         <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
+          <LineChart data={data} margin={{ top: 8, right: 8, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="#2B3B4C22" />
             <XAxis dataKey="week" tickLine={false} axisLine={false} />
             <YAxis
@@ -68,18 +63,22 @@ export function WeightPredictor() {
               }}
             />
             <Legend />
-            <Area
+            <Line
               type="monotone"
               dataKey="high"
-              stroke="none"
-              fill="#FF4A0022"
+              stroke="#FF4A0055"
+              strokeWidth={1.5}
+              strokeDasharray="4 4"
+              dot={false}
               name="Upper band"
             />
-            <Area
+            <Line
               type="monotone"
               dataKey="low"
-              stroke="none"
-              fill="#F3F6F9"
+              stroke="#FF4A0055"
+              strokeWidth={1.5}
+              strokeDasharray="4 4"
+              dot={false}
               name="Lower band"
             />
             <Line
@@ -94,11 +93,12 @@ export function WeightPredictor() {
               type="monotone"
               dataKey="actual"
               stroke="#FF4A00"
-              strokeWidth={2}
+              strokeWidth={2.5}
               connectNulls={false}
               name="Actual"
+              dot={{ r: 4, fill: "#FF4A00" }}
             />
-          </ComposedChart>
+          </LineChart>
         </ResponsiveContainer>
       </div>
       <p className="mt-3 text-sm text-[var(--mid-slate)]">{message}</p>
