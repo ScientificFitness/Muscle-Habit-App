@@ -1,0 +1,142 @@
+[
+  {
+    "id": "ru-001",
+    "date": "2025-09-12",
+    "title": "Hard sets beat junk volume past ~20 / muscle",
+    "summary": "A 2024 meta-regression on weekly set volume found hypertrophy returns flatten sharply above roughly 20 hard sets per muscle per week for trained lifters. Quality > stacking extras.",
+    "source": "Simulated Habit Lab brief · volume meta-regression 2024",
+    "ruleTarget": "volume",
+    "proposedChange": {
+      "setting": "volumeMaxSets",
+      "from": "20 hard sets / muscle / week soft cap",
+      "to": "Keep the 20-set soft cap; prefer adding proximity-to-failure over a 5th accessory",
+      "explanation": "If a muscle is already near 18–20 hard sets, we'll protect recovery instead of adding another isolation move."
+    }
+  },
+  {
+    "id": "ru-002",
+    "date": "2025-09-28",
+    "title": "6–12 still wins for most hypertrophy work",
+    "summary": "New lengthened-partial literature is exciting, but the practical coach takeaway remains: most weekly volume in a 6–12 (sometimes 5–15) zone with deep ranges of motion.",
+    "source": "Simulated Habit Lab brief · ROM & rep-zone review",
+    "ruleTarget": "rep_zones",
+    "proposedChange": {
+      "setting": "rep_zones",
+      "from": "Mixed zones without preference",
+      "to": "Bias accessories to 8–12; keep strength compounds at 4–8",
+      "explanation": "We'll nudge accessory rep targets toward 8–12 while leaving main lifts in lower zones."
+    }
+  },
+  {
+    "id": "ru-003",
+    "date": "2025-10-05",
+    "title": "Deloods work better as planned volume cuts",
+    "summary": "Athletes who planned a 40–50% volume deload every 4–6 weeks retained more strength than those who only deloaded reactively after joint niggles.",
+    "source": "Simulated Habit Lab brief · periodization cohort",
+    "ruleTarget": "deload",
+    "proposedChange": {
+      "setting": "deloadWeeks",
+      "from": "Weeks 4 and 8",
+      "to": "Keep weeks 4 & 8; treat them as ~60% volume, not total rest",
+      "explanation": "Scheduled deloads stay — we emphasize skill practice over couch time."
+    }
+  },
+  {
+    "id": "ru-004",
+    "date": "2025-10-14",
+    "title": "Double progression still the simplest auto-regulator",
+    "summary": "When lifters added load only after hitting the top of a rep range across all work sets, adherence and 12-week strength gains beat percentage-based weekly jumps for busy adults.",
+    "source": "Simulated Habit Lab brief · progression RCT-style summary",
+    "ruleTarget": "progression",
+    "proposedChange": {
+      "setting": "progression_rule",
+      "from": "Weekly forced load bumps",
+      "to": "Double progression: top of range on all sets → +2.5%",
+      "explanation": "Confirms our default rule. No change needed unless you prefer weekly percentage jumps."
+    }
+  },
+  {
+    "id": "ru-005",
+    "date": "2025-10-22",
+    "title": "Sleep debt tanks next-session RPE more than missed macros",
+    "summary": "In a monitored training group, <6 hours sleep predicted higher session RPE and fewer completed prescribed sets more strongly than a single high-carb or low-carb day.",
+    "source": "Simulated Habit Lab brief · recovery monitoring",
+    "ruleTarget": "recovery",
+    "proposedChange": {
+      "setting": "recovery_audit_weight",
+      "from": "Equal weight to soreness & mood",
+      "to": "Prioritize sleep question in recovery audit",
+      "explanation": "We'll highlight sleep in post-session check-ins before suggesting load cuts."
+    }
+  },
+  {
+    "id": "ru-006",
+    "date": "2025-11-01",
+    "title": "Protein ceiling myths vs. practical distribution",
+    "summary": "For fat-loss phases, ~1.6–2.2 g/kg protein remains the evidence-backed band. Spreading across 3–4 meals beat a single mega-shake for lean-mass retention in dieting lifters.",
+    "source": "Simulated Habit Lab brief · nutrition synthesis",
+    "ruleTarget": "nutrition",
+    "proposedChange": {
+      "setting": "protein_guidance",
+      "from": "Generic high-protein advice",
+      "to": "Target ~1.8 g/kg across 3–4 feedings during fat loss",
+      "explanation": "Dashboard nutrition tip updates; training volume stays put."
+    }
+  },
+  {
+    "id": "ru-007",
+    "date": "2025-11-18",
+    "title": "Minimum effective dose for maintenance is surprisingly low",
+    "summary": "Trained adults maintained strength for 8–12 weeks on ~1/3 of prior weekly sets when intensity (proximity to failure) stayed high — useful for travel and crunch weeks.",
+    "source": "Simulated Habit Lab brief · maintenance dose study",
+    "ruleTarget": "volume",
+    "proposedChange": {
+      "setting": "travel_volume",
+      "from": "Full program or nothing",
+      "to": "Offer a 1/3-volume maintenance mode for busy weeks",
+      "explanation": "Coach Builder can propose a short maintenance template instead of skipping entirely."
+    }
+  },
+  {
+    "id": "ru-008",
+    "date": "2025-12-03",
+    "title": "Lengthened-bias accessories for stubborn muscles",
+    "summary": "For lagging hamstrings and biceps, lengthened-position work (RDLs, incline curls) produced slightly better growth than shortened-only variants at matched effort.",
+    "source": "Simulated Habit Lab brief · regional hypertrophy",
+    "ruleTarget": "rep_zones",
+    "proposedChange": {
+      "setting": "weak_point_exercise_bias",
+      "from": "Any isolation for weak points",
+      "to": "Prefer lengthened-bias variations for weak points",
+      "explanation": "When you flag hamstrings or biceps as a priority, we'll prefer RDL / incline-curl style options."
+    }
+  },
+  {
+    "id": "ru-009",
+    "date": "2026-01-09",
+    "title": "Cardio doesn't kill gains — timing might matter",
+    "summary": "Concurrent training reviews show modest interference when hard intervals sit immediately before heavy lower-body strength. Separating by >6 hours or putting cardio after lifting blunted the effect.",
+    "source": "Simulated Habit Lab brief · concurrent training",
+    "ruleTarget": "recovery",
+    "proposedChange": {
+      "setting": "cardio_timing",
+      "from": "No guidance",
+      "to": "Prefer cardio after lifting or on separate days",
+      "explanation": "We'll surface a timing tip when fat-loss users add conditioning."
+    }
+  },
+  {
+    "id": "ru-010",
+    "date": "2026-02-02",
+    "title": "Plateaus break faster with a stimulus change than more willpower",
+    "summary": "Lifters stuck on a main lift for ≥2 weeks regained progress more often after a rep-zone or variation swap than after simply 'trying harder' at the same prescription.",
+    "source": "Simulated Habit Lab brief · plateau interventions",
+    "ruleTarget": "progression",
+    "proposedChange": {
+      "setting": "plateau_protocol",
+      "from": "Add sets when stuck",
+      "to": "Swap rep zone / variation before adding fatigue",
+      "explanation": "Confirms our plateau rule: change the stimulus, don't just pile volume."
+    }
+  }
+]

@@ -1,0 +1,658 @@
+[
+  {
+    "id": "time-crunch-full-body",
+    "name": "Time-Crunch Full Body",
+    "description": "Three efficient full-body sessions for busy weeks. Big compounds first, accessories that earn their keep.",
+    "weeks": 12,
+    "daysPerWeek": 3,
+    "equipment": "full_gym",
+    "goalFit": ["both", "general_health", "lose_fat", "build_muscle"],
+    "sessions": [
+      {
+        "id": "tc-a",
+        "name": "Session A — Squat Focus",
+        "dayLabel": "Day 1",
+        "estimatedMinutes": 45,
+        "exercises": [
+          {
+            "id": "tc-a-1",
+            "name": "Back Squat",
+            "pattern": "squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [5, 8],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "tc-a-2",
+            "name": "Bench Press",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "triceps"],
+            "sets": 3,
+            "repRange": [6, 10],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "tc-a-3",
+            "name": "Chest-Supported Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "tc-a-4",
+            "name": "Plank",
+            "pattern": "core",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [20, 40],
+            "notes": "Seconds hold"
+          }
+        ]
+      },
+      {
+        "id": "tc-b",
+        "name": "Session B — Hinge Focus",
+        "dayLabel": "Day 2",
+        "estimatedMinutes": 45,
+        "exercises": [
+          {
+            "id": "tc-b-1",
+            "name": "Romanian Deadlift",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes", "back"],
+            "sets": 3,
+            "repRange": [6, 10],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "tc-b-2",
+            "name": "Overhead Press",
+            "pattern": "vertical_push",
+            "muscleGroups": ["shoulders", "triceps"],
+            "sets": 3,
+            "repRange": [5, 8],
+            "linkedLift": "ohp"
+          },
+          {
+            "id": "tc-b-3",
+            "name": "Lat Pulldown",
+            "pattern": "vertical_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "pullup"
+          },
+          {
+            "id": "tc-b-4",
+            "name": "Walking Lunge",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 2,
+            "repRange": [8, 12]
+          }
+        ]
+      },
+      {
+        "id": "tc-c",
+        "name": "Session C — Balanced",
+        "dayLabel": "Day 3",
+        "estimatedMinutes": 40,
+        "exercises": [
+          {
+            "id": "tc-c-1",
+            "name": "Goblet Squat",
+            "pattern": "squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "tc-c-2",
+            "name": "Dumbbell Bench",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "triceps"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "tc-c-3",
+            "name": "One-Arm Dumbbell Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "tc-c-4",
+            "name": "Face Pull",
+            "pattern": "rear_delt",
+            "muscleGroups": ["shoulders", "back"],
+            "sets": 2,
+            "repRange": [12, 15]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "dumbbell-density",
+    "name": "Dumbbell Density",
+    "description": "Home or hotel-friendly. Dumbbells only, four days, smart supersets energy without the chaos.",
+    "weeks": 12,
+    "daysPerWeek": 4,
+    "equipment": "dumbbells",
+    "goalFit": ["build_muscle", "both", "general_health"],
+    "sessions": [
+      {
+        "id": "dd-a",
+        "name": "Upper Push/Pull",
+        "dayLabel": "Day 1",
+        "estimatedMinutes": 40,
+        "exercises": [
+          {
+            "id": "dd-a-1",
+            "name": "DB Floor Press",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "triceps"],
+            "sets": 4,
+            "repRange": [8, 12],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "dd-a-2",
+            "name": "DB Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 4,
+            "repRange": [8, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "dd-a-3",
+            "name": "Seated DB Press",
+            "pattern": "vertical_push",
+            "muscleGroups": ["shoulders"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "ohp"
+          },
+          {
+            "id": "dd-a-4",
+            "name": "DB Curl",
+            "pattern": "elbow_flexion",
+            "muscleGroups": ["biceps"],
+            "sets": 2,
+            "repRange": [10, 15]
+          }
+        ]
+      },
+      {
+        "id": "dd-b",
+        "name": "Lower Strength",
+        "dayLabel": "Day 2",
+        "estimatedMinutes": 40,
+        "exercises": [
+          {
+            "id": "dd-b-1",
+            "name": "DB Front Squat",
+            "pattern": "squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 4,
+            "repRange": [6, 10],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "dd-b-2",
+            "name": "DB RDL",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "dd-b-3",
+            "name": "Reverse Lunge",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12]
+          },
+          {
+            "id": "dd-b-4",
+            "name": "Dead Bug",
+            "pattern": "core",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [8, 12]
+          }
+        ]
+      },
+      {
+        "id": "dd-c",
+        "name": "Upper Pump",
+        "dayLabel": "Day 3",
+        "estimatedMinutes": 35,
+        "exercises": [
+          {
+            "id": "dd-c-1",
+            "name": "DB Incline Press",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "shoulders"],
+            "sets": 3,
+            "repRange": [10, 15],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "dd-c-2",
+            "name": "Renegade Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "core"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "dd-c-3",
+            "name": "Lateral Raise",
+            "pattern": "abduction",
+            "muscleGroups": ["shoulders"],
+            "sets": 3,
+            "repRange": [12, 15]
+          },
+          {
+            "id": "dd-c-4",
+            "name": "DB Skull Crusher",
+            "pattern": "elbow_extension",
+            "muscleGroups": ["triceps"],
+            "sets": 2,
+            "repRange": [10, 15]
+          }
+        ]
+      },
+      {
+        "id": "dd-d",
+        "name": "Lower Density",
+        "dayLabel": "Day 4",
+        "estimatedMinutes": 35,
+        "exercises": [
+          {
+            "id": "dd-d-1",
+            "name": "DB Romanian Deadlift",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes"],
+            "sets": 3,
+            "repRange": [10, 12],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "dd-d-2",
+            "name": "Bulgarian Split Squat",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12]
+          },
+          {
+            "id": "dd-d-3",
+            "name": "Hip Thrust (DB)",
+            "pattern": "bridge",
+            "muscleGroups": ["glutes"],
+            "sets": 3,
+            "repRange": [10, 15]
+          },
+          {
+            "id": "dd-d-4",
+            "name": "Calf Raise",
+            "pattern": "calf",
+            "muscleGroups": ["calves"],
+            "sets": 3,
+            "repRange": [12, 20]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "bodyweight-foundations",
+    "name": "Bodyweight Foundations",
+    "description": "No equipment required. Progressive calisthenics patterns for travel weeks and reset phases.",
+    "weeks": 12,
+    "daysPerWeek": 3,
+    "equipment": "bodyweight",
+    "goalFit": ["general_health", "lose_fat", "both"],
+    "sessions": [
+      {
+        "id": "bw-a",
+        "name": "Push + Core",
+        "dayLabel": "Day 1",
+        "estimatedMinutes": 30,
+        "exercises": [
+          {
+            "id": "bw-a-1",
+            "name": "Push-Up",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "triceps"],
+            "sets": 4,
+            "repRange": [8, 15],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "bw-a-2",
+            "name": "Pike Push-Up",
+            "pattern": "vertical_push",
+            "muscleGroups": ["shoulders"],
+            "sets": 3,
+            "repRange": [6, 12],
+            "linkedLift": "ohp"
+          },
+          {
+            "id": "bw-a-3",
+            "name": "Dead Bug",
+            "pattern": "core",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [8, 12]
+          },
+          {
+            "id": "bw-a-4",
+            "name": "Side Plank",
+            "pattern": "core",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [20, 40],
+            "notes": "Seconds each side"
+          }
+        ]
+      },
+      {
+        "id": "bw-b",
+        "name": "Pull + Hinge",
+        "dayLabel": "Day 2",
+        "estimatedMinutes": 30,
+        "exercises": [
+          {
+            "id": "bw-b-1",
+            "name": "Inverted Row / Table Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 4,
+            "repRange": [6, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "bw-b-2",
+            "name": "Hip Hinge Good Morning",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes"],
+            "sets": 3,
+            "repRange": [10, 15],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "bw-b-3",
+            "name": "Glute Bridge",
+            "pattern": "bridge",
+            "muscleGroups": ["glutes"],
+            "sets": 3,
+            "repRange": [12, 20]
+          },
+          {
+            "id": "bw-b-4",
+            "name": "Superman Hold",
+            "pattern": "extension",
+            "muscleGroups": ["back"],
+            "sets": 3,
+            "repRange": [20, 30],
+            "notes": "Seconds"
+          }
+        ]
+      },
+      {
+        "id": "bw-c",
+        "name": "Legs + Conditioning",
+        "dayLabel": "Day 3",
+        "estimatedMinutes": 30,
+        "exercises": [
+          {
+            "id": "bw-c-1",
+            "name": "Split Squat",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "bw-c-2",
+            "name": "Walking Lunge",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [10, 14]
+          },
+          {
+            "id": "bw-c-3",
+            "name": "Calf Raise",
+            "pattern": "calf",
+            "muscleGroups": ["calves"],
+            "sets": 3,
+            "repRange": [15, 25]
+          },
+          {
+            "id": "bw-c-4",
+            "name": "Mountain Climbers",
+            "pattern": "conditioning",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [20, 40]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "strength-recomp",
+    "name": "Strength Recomp",
+    "description": "Four-day upper/lower for intermediate lifters who want muscle and a stronger main lifts board.",
+    "weeks": 12,
+    "daysPerWeek": 4,
+    "equipment": "full_gym",
+    "goalFit": ["build_muscle", "both"],
+    "sessions": [
+      {
+        "id": "sr-a",
+        "name": "Upper A",
+        "dayLabel": "Day 1",
+        "estimatedMinutes": 55,
+        "exercises": [
+          {
+            "id": "sr-a-1",
+            "name": "Bench Press",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "triceps"],
+            "sets": 4,
+            "repRange": [4, 6],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "sr-a-2",
+            "name": "Barbell Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 4,
+            "repRange": [5, 8],
+            "linkedLift": "row"
+          },
+          {
+            "id": "sr-a-3",
+            "name": "Overhead Press",
+            "pattern": "vertical_push",
+            "muscleGroups": ["shoulders"],
+            "sets": 3,
+            "repRange": [5, 8],
+            "linkedLift": "ohp"
+          },
+          {
+            "id": "sr-a-4",
+            "name": "Lat Pulldown",
+            "pattern": "vertical_pull",
+            "muscleGroups": ["back"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "pullup"
+          },
+          {
+            "id": "sr-a-5",
+            "name": "Triceps Pushdown",
+            "pattern": "elbow_extension",
+            "muscleGroups": ["triceps"],
+            "sets": 2,
+            "repRange": [10, 15]
+          }
+        ]
+      },
+      {
+        "id": "sr-b",
+        "name": "Lower A",
+        "dayLabel": "Day 2",
+        "estimatedMinutes": 55,
+        "exercises": [
+          {
+            "id": "sr-b-1",
+            "name": "Back Squat",
+            "pattern": "squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 4,
+            "repRange": [4, 6],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "sr-b-2",
+            "name": "Romanian Deadlift",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes"],
+            "sets": 3,
+            "repRange": [6, 10],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "sr-b-3",
+            "name": "Leg Press",
+            "pattern": "squat",
+            "muscleGroups": ["quads"],
+            "sets": 3,
+            "repRange": [8, 12]
+          },
+          {
+            "id": "sr-b-4",
+            "name": "Hanging Knee Raise",
+            "pattern": "core",
+            "muscleGroups": ["core"],
+            "sets": 3,
+            "repRange": [8, 15]
+          }
+        ]
+      },
+      {
+        "id": "sr-c",
+        "name": "Upper B",
+        "dayLabel": "Day 3",
+        "estimatedMinutes": 50,
+        "exercises": [
+          {
+            "id": "sr-c-1",
+            "name": "Incline Bench",
+            "pattern": "horizontal_push",
+            "muscleGroups": ["chest", "shoulders"],
+            "sets": 3,
+            "repRange": [6, 10],
+            "linkedLift": "bench"
+          },
+          {
+            "id": "sr-c-2",
+            "name": "Pull-Up",
+            "pattern": "vertical_pull",
+            "muscleGroups": ["back", "biceps"],
+            "sets": 3,
+            "repRange": [5, 10],
+            "linkedLift": "pullup"
+          },
+          {
+            "id": "sr-c-3",
+            "name": "Seated Row",
+            "pattern": "horizontal_pull",
+            "muscleGroups": ["back"],
+            "sets": 3,
+            "repRange": [8, 12],
+            "linkedLift": "row"
+          },
+          {
+            "id": "sr-c-4",
+            "name": "Lateral Raise",
+            "pattern": "abduction",
+            "muscleGroups": ["shoulders"],
+            "sets": 3,
+            "repRange": [12, 15]
+          },
+          {
+            "id": "sr-c-5",
+            "name": "Hammer Curl",
+            "pattern": "elbow_flexion",
+            "muscleGroups": ["biceps"],
+            "sets": 2,
+            "repRange": [10, 15]
+          }
+        ]
+      },
+      {
+        "id": "sr-d",
+        "name": "Lower B",
+        "dayLabel": "Day 4",
+        "estimatedMinutes": 50,
+        "exercises": [
+          {
+            "id": "sr-d-1",
+            "name": "Deadlift",
+            "pattern": "hinge",
+            "muscleGroups": ["hamstrings", "glutes", "back"],
+            "sets": 3,
+            "repRange": [3, 5],
+            "linkedLift": "deadlift"
+          },
+          {
+            "id": "sr-d-2",
+            "name": "Front Squat",
+            "pattern": "squat",
+            "muscleGroups": ["quads", "core"],
+            "sets": 3,
+            "repRange": [5, 8],
+            "linkedLift": "squat"
+          },
+          {
+            "id": "sr-d-3",
+            "name": "Walking Lunge",
+            "pattern": "split_squat",
+            "muscleGroups": ["quads", "glutes"],
+            "sets": 3,
+            "repRange": [8, 12]
+          },
+          {
+            "id": "sr-d-4",
+            "name": "Calf Raise",
+            "pattern": "calf",
+            "muscleGroups": ["calves"],
+            "sets": 3,
+            "repRange": [10, 15]
+          }
+        ]
+      }
+    ]
+  }
+]
