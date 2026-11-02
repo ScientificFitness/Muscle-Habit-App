@@ -2,6 +2,7 @@
 
 import { useApp } from "@/context/AppContext";
 import { cn } from "@/lib/cn";
+import { BrandLogo } from "@/components/BrandLogo";
 import {
   Beaker,
   ClipboardList,
@@ -11,7 +12,6 @@ import {
   ShoppingBag,
   Ruler,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -31,16 +31,9 @@ export function Sidebar() {
 
   return (
     <aside className="hidden md:flex md:w-60 md:flex-col md:border-r md:border-[var(--navy)]/10 md:bg-white/70 md:backdrop-blur-sm">
-      <div className="flex items-center gap-2 px-4 py-5">
-        <Link href="/dashboard" className="block">
-          <Image
-            src="/muscle-habit-logo.png"
-            alt="Muscle Habit"
-            width={168}
-            height={30}
-            priority
-            className="h-8 w-auto"
-          />
+      <div className="flex items-center px-4 py-5">
+        <Link href="/dashboard" className="block" aria-label="Muscle Habit home">
+          <BrandLogo size="md" priority />
         </Link>
       </div>
       <nav className="flex flex-1 flex-col gap-1 px-3 pb-4">
@@ -109,16 +102,9 @@ export function MobileNav() {
 
 export function TopBar() {
   return (
-    <header className="flex items-center justify-between border-b border-[var(--navy)]/10 bg-white/70 px-4 py-3 backdrop-blur md:hidden">
-      <Link href="/dashboard">
-        <Image
-          src="/muscle-habit-logo.png"
-          alt="Muscle Habit"
-          width={148}
-          height={27}
-          priority
-          className="h-7 w-auto"
-        />
+    <header className="flex items-center justify-between border-b border-[var(--navy)]/10 bg-white/70 px-4 py-2.5 backdrop-blur md:hidden">
+      <Link href="/dashboard" aria-label="Muscle Habit home">
+        <BrandLogo size="sm" priority />
       </Link>
       <Link
         href="/settings"

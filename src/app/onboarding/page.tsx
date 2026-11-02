@@ -14,7 +14,7 @@ import type {
   SessionMinutes,
   Sex,
 } from "@/lib/types";
-import Image from "next/image";
+import { BrandLogo } from "@/components/BrandLogo";
 import { useMemo, useState } from "react";
 
 const TOTAL = 6;
@@ -66,14 +66,7 @@ export default function OnboardingPage() {
   return (
     <div className="min-h-screen px-4 py-8 md:px-8">
       <div className="mx-auto max-w-lg animate-fade-up">
-        <Image
-          src="/muscle-habit-logo.png"
-          alt="Muscle Habit"
-          width={200}
-          height={36}
-          priority
-          className="mb-8 h-9 w-auto"
-        />
+        <BrandLogo size="lg" priority className="mb-8" />
         <ProgressDots total={TOTAL} current={step} />
 
         <div className="mt-8 space-y-6">
