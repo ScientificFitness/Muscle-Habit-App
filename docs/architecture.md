@@ -40,7 +40,7 @@ Defined in `src/app/globals.css`:
 - Orange `#FF4A00` — actions only (never large orange body copy)
 - Mid Slate `#6B7C8F` — disclaimers & secondary
 - Heading font: Oswald · Body: Source Sans 3
-- Logo: `public/muscle-habit-logo.jpg` (stacked MUSCLE navy / HABIT orange), via `BrandLogo`
+- Logo: `public/muscle-habit-logo.png` (stacked MUSCLE navy / HABIT orange), via `BrandLogo`
 
 ## Extending research updates
 
