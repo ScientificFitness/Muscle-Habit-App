@@ -225,8 +225,10 @@ export function runAdaptations(input: {
         rule: `vol_high_${muscle}`,
       });
     } else if (
-      sets < settings.volumeMinSets &&
+      // Only nudge true under-dosing (<6). 6–10 is fine for time-crunch blocks.
       sets > 0 &&
+      sets < 6 &&
+      workoutLogs.length >= 3 &&
       !alreadySaid(`vol_low_${muscle}`, 14)
     ) {
       program = {
@@ -242,7 +244,7 @@ export function runAdaptations(input: {
         id: uid("adapt"),
         date: today,
         summary: `Nudged ${muscle} volume upward`,
-        detail: `Weekly ${muscle} volume was ~${sets} hard sets — below the ${settings.volumeMinSets}–${settings.volumeMaxSets} sweet spot.`,
+        detail: `Weekly ${muscle} volume was ~${sets} hard sets — light even for a maintenance week. Sweet spot for growth is roughly ${settings.volumeMinSets}–${settings.volumeMaxSets}.`,
         rule: `vol_low_${muscle}`,
       });
     }
