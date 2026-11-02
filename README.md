@@ -8,7 +8,7 @@ No account. No backend. Everything stays in your browser (`localStorage`).
 
 - **Navy** `#2B3B4C` carries the message
 - **Orange** `#FF4A00` triggers the action
-- Logo: [`public/muscle-habit-logo.svg`](public/muscle-habit-logo.svg)
+- Logo: [`public/muscle-habit-logo.png`](public/muscle-habit-logo.png)
 - Shop link (nav): configurable in Settings — default `https://musclehabit.shop`
 
 ## Quick start

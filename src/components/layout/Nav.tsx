@@ -34,12 +34,12 @@ export function Sidebar() {
       <div className="flex items-center gap-2 px-4 py-5">
         <Link href="/dashboard" className="block">
           <Image
-            src="/muscle-habit-logo.svg"
+            src="/muscle-habit-logo.png"
             alt="Muscle Habit"
             width={168}
-            height={38}
+            height={30}
             priority
-            className="h-9 w-auto"
+            className="h-8 w-auto"
           />
         </Link>
       </div>
@@ -112,12 +112,12 @@ export function TopBar() {
     <header className="flex items-center justify-between border-b border-[var(--navy)]/10 bg-white/70 px-4 py-3 backdrop-blur md:hidden">
       <Link href="/dashboard">
         <Image
-          src="/muscle-habit-logo.svg"
+          src="/muscle-habit-logo.png"
           alt="Muscle Habit"
           width={148}
-          height={34}
+          height={27}
           priority
-          className="h-8 w-auto"
+          className="h-7 w-auto"
         />
       </Link>
       <Link

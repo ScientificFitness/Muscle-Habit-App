@@ -67,12 +67,12 @@ export default function OnboardingPage() {
     <div className="min-h-screen px-4 py-8 md:px-8">
       <div className="mx-auto max-w-lg animate-fade-up">
         <Image
-          src="/muscle-habit-logo.svg"
+          src="/muscle-habit-logo.png"
           alt="Muscle Habit"
           width={200}
-          height={46}
+          height={36}
           priority
-          className="mb-8 h-10 w-auto"
+          className="mb-8 h-9 w-auto"
         />
         <ProgressDots total={TOTAL} current={step} />
 
