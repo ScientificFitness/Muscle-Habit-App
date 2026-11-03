@@ -81,12 +81,12 @@ export default function SettingsPage() {
       <section className="rounded-md border border-[var(--navy)]/10 bg-white/80 p-4 space-y-3">
         <h2 className="text-lg uppercase tracking-wide">Shortcuts</h2>
         <div className="flex flex-wrap gap-2">
-          <Link href="/numbers">
+          <Link href="/planner/numbers">
             <Button variant="outline" size="sm">
               My Numbers
             </Button>
           </Link>
-          <Link href="/programs/coach">
+          <Link href="/planner/programs/coach">
             <Button variant="outline" size="sm">
               Coach Builder
             </Button>

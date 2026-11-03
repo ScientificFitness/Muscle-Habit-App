@@ -59,7 +59,7 @@ function WorkoutInner() {
         <p className="text-[var(--mid-slate)]">
           Activate a program first, then come back to log your session.
         </p>
-        <Link href="/programs">
+        <Link href="/planner/programs">
           <Button>Browse programs</Button>
         </Link>
       </div>
@@ -105,10 +105,10 @@ function WorkoutInner() {
           Nice work. The adaptation engine reviewed your log — check the dashboard changelog.
         </p>
         <div className="flex gap-2">
-          <Link href="/dashboard">
+          <Link href="/planner/dashboard">
             <Button>Dashboard</Button>
           </Link>
-          <Link href="/numbers">
+          <Link href="/planner/numbers">
             <Button variant="outline">My Numbers</Button>
           </Link>
         </div>

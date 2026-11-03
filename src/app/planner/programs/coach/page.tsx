@@ -70,7 +70,7 @@ export default function CoachBuilderPage() {
     <div className="mx-auto max-w-2xl animate-fade-up">
       <header className="mb-6">
         <Link
-          href="/programs"
+          href="/planner/programs"
           className="text-sm text-[var(--mid-slate)] hover:text-[var(--navy)]"
         >
           ← Programs
@@ -124,10 +124,10 @@ export default function CoachBuilderPage() {
 
         {savedId && (
           <div className="flex flex-wrap gap-2 pt-2">
-            <Link href="/programs">
+            <Link href="/planner/programs">
               <Button>View programs</Button>
             </Link>
-            <Link href="/dashboard">
+            <Link href="/planner/dashboard">
               <Button variant="outline">Dashboard</Button>
             </Link>
           </div>

@@ -1,15 +1,23 @@
 # Muscle Habit
 
-Adaptive fitness coaching for busy professionals (28–50). Build or pick a 12-week program, log lifts and weigh-ins, and let an evidence-based engine adjust volume, loads, and deloads — with research updates from **The Habit Lab**.
+Adaptive fitness coaching for busy professionals (28–50). Marketing site at `/`, interactive planner at `/planner`.
 
 No account. No backend. Everything stays in your browser (`localStorage`).
 
+## Routes
+
+| Path | What |
+| --- | --- |
+| `/` | Marketing landing (hero, lead magnet, features, YouTube) |
+| `/planner` | Workout planner entry → onboarding or dashboard |
+| `/planner/dashboard` … `/planner/lab` | Full tool (programs, Coach Builder, Habit Lab, etc.) |
+
 ## Brand
 
-- **Navy** `#2B3B4C` carries the message
-- **Orange** `#FF4A00` triggers the action
+- Planner UI: **Navy** `#2B3B4C` · **Orange** `#FF4A00`
+- Marketing: charcoal `#0F172A` · slate cards `#1E293B` · teal `#0D9488` · burnt orange `#F97316`
 - Logo: [`public/muscle-habit-logo.png`](public/muscle-habit-logo.png)
-- Shop link (nav): configurable in Settings — default `https://musclehabit.shop`
+- Shop link (planner nav): configurable in Settings — default `https://musclehabit.shop`
 
 ## Quick start
 
@@ -18,7 +26,7 @@ npm install
 npm run dev
 ```
 
-Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
+Open [http://127.0.0.1:43123](http://127.0.0.1:43123) for the landing page, or [http://127.0.0.1:43123/planner](http://127.0.0.1:43123/planner) for the tool.
 
 ## Screenshots
 

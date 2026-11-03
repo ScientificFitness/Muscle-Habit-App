@@ -3,6 +3,7 @@
 import { Celebration } from "@/components/Celebration";
 import { MobileNav, Sidebar, TopBar } from "@/components/layout/Nav";
 import { useApp } from "@/context/AppContext";
+import { routes } from "@/lib/paths";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -10,16 +11,25 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const { ready, state } = useApp();
   const pathname = usePathname();
   const router = useRouter();
-  const isOnboarding = pathname.startsWith("/onboarding");
+  const isPlanner = pathname.startsWith(routes.planner);
+  const isOnboarding = pathname.startsWith(routes.onboarding);
 
   useEffect(() => {
-    if (!ready) return;
+    if (!ready || !isPlanner) return;
     if (!state.onboarded && !isOnboarding) {
-      router.replace("/onboarding");
-    } else if (state.onboarded && (pathname === "/" || isOnboarding)) {
-      router.replace("/dashboard");
+      router.replace(routes.onboarding);
+    } else if (
+      state.onboarded &&
+      (pathname === routes.planner || isOnboarding)
+    ) {
+      router.replace(routes.dashboard);
     }
-  }, [ready, state.onboarded, isOnboarding, pathname, router]);
+  }, [ready, state.onboarded, isOnboarding, isPlanner, pathname, router]);
+
+  // Marketing (and any non-planner) routes: no planner chrome
+  if (!isPlanner) {
+    return <>{children}</>;
+  }
 
   if (!ready) {
     return (

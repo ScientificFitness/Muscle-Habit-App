@@ -67,7 +67,7 @@ export default function DashboardPage() {
             >
               Later
             </Button>
-            <Link href="/lab">
+            <Link href="/planner/lab">
               <Button size="sm">Review in Habit Lab</Button>
             </Link>
           </div>
@@ -82,7 +82,7 @@ export default function DashboardPage() {
               <p className="text-[var(--mid-slate)] text-sm">
                 No active program yet. Grab a template or build one with the coach.
               </p>
-              <Link href="/programs" className="mt-4 inline-block">
+              <Link href="/planner/programs" className="mt-4 inline-block">
                 <Button>Choose a program</Button>
               </Link>
             </div>
@@ -92,7 +92,7 @@ export default function DashboardPage() {
               <p className="text-sm text-[var(--navy)]">
                 Session logged for today. Recovery is part of the program — see you next time.
               </p>
-              <Link href="/numbers" className="mt-4 inline-block">
+              <Link href="/planner/numbers" className="mt-4 inline-block">
                 <Button variant="outline">Update My Numbers</Button>
               </Link>
             </div>
@@ -120,7 +120,7 @@ export default function DashboardPage() {
                 ))}
               </ul>
               <Link
-                href={`/workout?session=${todaySession.session.id}`}
+                href={`/planner/workout?session=${todaySession.session.id}`}
                 className="mt-5 inline-block"
               >
                 <Button>Start session</Button>

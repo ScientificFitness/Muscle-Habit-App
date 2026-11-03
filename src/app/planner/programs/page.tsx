@@ -76,7 +76,7 @@ export default function ProgramsPage() {
             Pick a ready 12-week template, or build one with the coach — both are first-class.
           </p>
         </div>
-        <Link href="/programs/coach">
+        <Link href="/planner/programs/coach">
           <Button>Build with Coach</Button>
         </Link>
       </header>

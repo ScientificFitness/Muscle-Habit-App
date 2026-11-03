@@ -1,8 +1,9 @@
 "use client";
 
+import { BrandLogo } from "@/components/BrandLogo";
 import { useApp } from "@/context/AppContext";
 import { cn } from "@/lib/cn";
-import { BrandLogo } from "@/components/BrandLogo";
+import { routes } from "@/lib/paths";
 import {
   Beaker,
   ClipboardList,
@@ -16,12 +17,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/programs", label: "Programs", icon: ClipboardList },
-  { href: "/workout", label: "Train", icon: Dumbbell },
-  { href: "/numbers", label: "My Numbers", icon: Ruler },
-  { href: "/lab", label: "Habit Lab", icon: Beaker },
-  { href: "/settings", label: "Settings", icon: Settings },
+  { href: routes.dashboard, label: "Dashboard", icon: LayoutDashboard },
+  { href: routes.programs, label: "Programs", icon: ClipboardList },
+  { href: routes.workout, label: "Train", icon: Dumbbell },
+  { href: routes.numbers, label: "My Numbers", icon: Ruler },
+  { href: routes.lab, label: "Habit Lab", icon: Beaker },
+  { href: routes.settings, label: "Settings", icon: Settings },
 ];
 
 export function Sidebar() {
@@ -32,7 +33,7 @@ export function Sidebar() {
   return (
     <aside className="hidden md:flex md:w-60 md:flex-col md:border-r md:border-[var(--navy)]/10 md:bg-white/70 md:backdrop-blur-sm">
       <div className="flex items-center px-4 py-5">
-        <Link href="/dashboard" className="block" aria-label="Muscle Habit home">
+        <Link href={routes.home} className="block" aria-label="Muscle Habit home">
           <BrandLogo size="md" priority />
         </Link>
       </div>
@@ -71,9 +72,14 @@ export function Sidebar() {
 
 export function MobileNav() {
   const pathname = usePathname();
-  const mobile = links.filter((l) =>
-    ["/dashboard", "/programs", "/workout", "/numbers", "/lab"].includes(l.href)
-  );
+  const mobileHrefs = new Set<string>([
+    routes.dashboard,
+    routes.programs,
+    routes.workout,
+    routes.numbers,
+    routes.lab,
+  ]);
+  const mobile = links.filter((l) => mobileHrefs.has(l.href));
 
   return (
     <nav className="fixed bottom-0 inset-x-0 z-40 border-t border-[var(--navy)]/10 bg-white/95 backdrop-blur md:hidden">
@@ -90,7 +96,11 @@ export function MobileNav() {
                 )}
               >
                 <Icon className="h-5 w-5" aria-hidden />
-                {label === "My Numbers" ? "Numbers" : label === "Habit Lab" ? "Lab" : label}
+                {label === "My Numbers"
+                  ? "Numbers"
+                  : label === "Habit Lab"
+                    ? "Lab"
+                    : label}
               </Link>
             </li>
           );
@@ -103,11 +113,11 @@ export function MobileNav() {
 export function TopBar() {
   return (
     <header className="flex items-center justify-between border-b border-[var(--navy)]/10 bg-white/70 px-4 py-2.5 backdrop-blur md:hidden">
-      <Link href="/dashboard" aria-label="Muscle Habit home">
+      <Link href={routes.home} aria-label="Muscle Habit home">
         <BrandLogo size="sm" priority />
       </Link>
       <Link
-        href="/settings"
+        href={routes.settings}
         className="rounded-md p-2 text-[var(--navy)] hover:bg-[var(--navy)]/5"
         aria-label="Settings"
       >

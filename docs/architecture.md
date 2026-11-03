@@ -6,13 +6,19 @@ Muscle Habit is a client-only Next.js App Router product. All user data lives in
 
 ```
 src/
-  app/           # Routes (onboarding, dashboard, programs, workout, numbers, lab, settings)
-  components/    # UI + feature components
-  context/       # AppProvider — single source of truth
-  data/          # Seed JSON (programs, research)
-  lib/           # Pure domain logic (formulas, adaptation, coach, reinforcement)
-docs/            # This folder
+  app/
+    page.tsx              # Marketing landing
+    planner/              # Interactive app (onboarding, dashboard, programs, …)
+  components/
+    marketing/            # Landing nav, email capture
+    layout/               # Planner shell (sidebar / mobile tabs)
+  context/                # AppProvider — localStorage source of truth
+  data/                   # Seed JSON (programs, research)
+  lib/paths.ts            # /planner route helpers
+docs/
 ```
+
+Marketing routes render without planner chrome. `AppShell` only applies when the path starts with `/planner`.
 
 ## Data flow
 
