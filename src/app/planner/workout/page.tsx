@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { useApp } from "@/context/AppContext";
+import { isMissedRepDeloadRecommended } from "@/lib/adaptation";
 import { todayISO } from "@/lib/formulas";
 import type { LoggedExercise, LoggedSet, ProgramSession } from "@/lib/types";
 import Link from "next/link";
@@ -41,12 +42,17 @@ function useSession() {
 }
 
 function WorkoutInner() {
-  const { activeProgram, logWorkout, runEngine } = useApp();
+  const { activeProgram, state, logWorkout, runEngine } = useApp();
   const session = useSession();
 
   const [logs, setLogs] = useState<LoggedExercise[]>([]);
   const [recovery, setRecovery] = useState(4);
   const [done, setDone] = useState(false);
+
+  const deloadRecommended = useMemo(
+    () => isMissedRepDeloadRecommended(activeProgram, state.workoutLogs),
+    [activeProgram, state.workoutLogs]
+  );
 
   useEffect(() => {
     if (session) setLogs(buildLogs(session));
@@ -120,9 +126,19 @@ function WorkoutInner() {
     <div className="mx-auto max-w-2xl space-y-6 animate-fade-up">
       <header>
         <p className="text-sm text-[var(--mid-slate)]">{activeProgram.name}</p>
-        <h1 className="text-3xl uppercase tracking-wide">{session.name}</h1>
+        <div className="mt-1 flex flex-wrap items-center gap-3">
+          <h1 className="text-3xl uppercase tracking-wide">{session.name}</h1>
+          {deloadRecommended && (
+            <span className="inline-flex items-center rounded-md bg-[var(--orange-soft)] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--orange)] ring-1 ring-[var(--orange)]/30">
+              Deload Recommended
+            </span>
+          )}
+        </div>
         <p className="mt-1 text-sm text-[var(--mid-slate)]">
           ~{session.estimatedMinutes} min · mark sets complete as you go
+          {deloadRecommended
+            ? " · two missed-rep sessions → try ~5% lighter loads"
+            : ""}
         </p>
       </header>
 

@@ -109,6 +109,69 @@ function deloadExercise(ex: ProgramExercise): ProgramExercise {
   };
 }
 
+function loadDeload5(ex: ProgramExercise): ProgramExercise {
+  return {
+    ...ex,
+    notes: [ex.notes, "Deload recommended: cut working weight ~5%"]
+      .filter(Boolean)
+      .join(" · "),
+  };
+}
+
+function exerciseTargetMap(program: Program): Map<string, [number, number]> {
+  const map = new Map<string, [number, number]>();
+  for (const s of program.sessions) {
+    for (const e of s.exercises) {
+      map.set(e.id, e.repRange);
+    }
+  }
+  return map;
+}
+
+/** True when a logged session mostly missed the bottom of prescribed rep ranges. */
+export function sessionMissedRepTargets(
+  log: WorkoutLog,
+  program: Program
+): boolean {
+  const targets = exerciseTargetMap(program);
+  let judged = 0;
+  let missed = 0;
+  for (const ex of log.exercises) {
+    const range =
+      targets.get(ex.exerciseId) ??
+      program.sessions
+        .flatMap((s) => s.exercises)
+        .find((e) => e.name === ex.name)?.repRange;
+    if (!range) continue;
+    const completed = ex.sets.filter((s) => s.completed && s.reps > 0);
+    if (completed.length === 0) continue;
+    judged += 1;
+    const hitFloor = completed.some((s) => s.reps >= range[0]);
+    if (!hitFloor) missed += 1;
+  }
+  if (judged === 0) return false;
+  return missed / judged >= 0.5;
+}
+
+/**
+ * Coach Builder / adaptive rule: two consecutive sessions missing the
+ * target rep range → suggest a 5% load deload.
+ */
+export function isMissedRepDeloadRecommended(
+  program: Program | null,
+  workoutLogs: WorkoutLog[]
+): boolean {
+  if (!program || workoutLogs.length < 2) return false;
+  const recent = [...workoutLogs].sort((a, b) =>
+    b.date.localeCompare(a.date)
+  );
+  const a = recent[0];
+  const b = recent[1];
+  return (
+    sessionMissedRepTargets(a, program) && sessionMissedRepTargets(b, program)
+  );
+}
+
 function countHardSetsByMuscle(program: Program): Record<string, number> {
   const counts: Record<string, number> = {};
   for (const session of program.sessions) {
@@ -287,6 +350,28 @@ export function runAdaptations(input: {
         rule,
       });
     }
+  }
+
+  // --- Missed rep range × 2 sessions → 5% load deload (Coach Builder rule) ---
+  if (
+    isMissedRepDeloadRecommended(program, workoutLogs) &&
+    !alreadySaid("missed_rep_deload_5", 10)
+  ) {
+    program = {
+      ...program,
+      sessions: program.sessions.map((s) => ({
+        ...s,
+        exercises: s.exercises.map(loadDeload5),
+      })),
+    };
+    entries.push({
+      id: uid("adapt"),
+      date: today,
+      summary: "Deload recommended: −5% working weight",
+      detail:
+        "Two consecutive sessions missed the target rep range. Drop loads ~5%, own the reps, then rebuild.",
+      rule: "missed_rep_deload_5",
+    });
   }
 
   // --- Auto deload suggestion: poor recovery + high completion stress ---

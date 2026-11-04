@@ -3,6 +3,17 @@
 import { useState } from "react";
 
 const STORAGE_KEY = "muscle-habit-leads";
+const PROTOCOL_PDF = "/muscle-habit-protocol.pdf";
+
+function triggerProtocolDownload() {
+  const a = document.createElement("a");
+  a.href = PROTOCOL_PDF;
+  a.download = "muscle-habit-protocol.pdf";
+  a.rel = "noopener";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
 
 export function EmailCapture() {
   const [email, setEmail] = useState("");
@@ -24,10 +35,12 @@ export function EmailCapture() {
         list.push({ email: trimmed, at: new Date().toISOString() });
         localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
       }
+      triggerProtocolDownload();
       setEmail("");
-      setToast("You're in — check your inbox for the Quickstart Guide.");
+      setToast("Protocol sent to your inbox!");
     } catch {
-      setToast("Saved locally. You're on the list.");
+      triggerProtocolDownload();
+      setToast("Protocol sent to your inbox!");
     } finally {
       setBusy(false);
       setTimeout(() => setToast(null), 4200);
@@ -63,7 +76,7 @@ export function EmailCapture() {
       {toast && (
         <p
           role="status"
-          className="absolute left-0 right-0 top-[calc(100%+0.75rem)] rounded-md bg-[#0D9488] px-4 py-2 text-sm font-medium text-white shadow-lg animate-[fade-up_0.35s_ease-out]"
+          className="absolute left-0 right-0 top-[calc(100%+0.75rem)] z-10 rounded-md bg-[#0D9488] px-4 py-2 text-sm font-medium text-white shadow-lg animate-[fade-up_0.35s_ease-out]"
         >
           {toast}
         </p>

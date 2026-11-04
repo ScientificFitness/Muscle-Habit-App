@@ -2,20 +2,31 @@
 
 import { Button } from "@/components/ui/Button";
 import { useApp } from "@/context/AppContext";
+import { isMissedRepDeloadRecommended } from "@/lib/adaptation";
 import {
   advanceCoach,
   finalizeCoachProgram,
   initialCoachState,
   type CoachBuilderState,
 } from "@/lib/coach";
+import { getProgramById } from "@/lib/programs";
 import { validateProgramVolume } from "@/lib/programs";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export default function CoachBuilderPage() {
   const { state, saveCustomProgram, setCoachDraft } = useApp();
   const [builder, setBuilder] = useState<CoachBuilderState | null>(null);
   const [savedId, setSavedId] = useState<string | null>(null);
+
+  const activeProgram = useMemo(
+    () => getProgramById(state.activeProgramId, state.customPrograms),
+    [state.activeProgramId, state.customPrograms]
+  );
+  const deloadRecommended = useMemo(
+    () => isMissedRepDeloadRecommended(activeProgram, state.workoutLogs),
+    [activeProgram, state.workoutLogs]
+  );
 
   // Init once when profile is ready — do not reset on later profile patches
   // (weigh-ins / settings updates were wiping mid-dialogue).
@@ -75,9 +86,18 @@ export default function CoachBuilderPage() {
         >
           ← Programs
         </Link>
-        <h1 className="mt-2 text-3xl uppercase tracking-wide">Coach Builder</h1>
+        <div className="mt-2 flex flex-wrap items-center gap-3">
+          <h1 className="text-3xl uppercase tracking-wide">Coach Builder</h1>
+          {deloadRecommended && (
+            <span className="inline-flex items-center rounded-md bg-[var(--orange-soft)] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-[var(--orange)] ring-1 ring-[var(--orange)]/30">
+              Deload Recommended
+            </span>
+          )}
+        </div>
         <p className="mt-2 text-[var(--mid-slate)]">
-          Short questions. Clear proposals. You accept, tweak, or reject — we validate volume as we go.
+          Short questions. Clear proposals. You accept, tweak, or reject — we
+          validate volume as we go. Miss the target rep range two sessions in a
+          row and we suggest a 5% load deload.
         </p>
       </header>
 
