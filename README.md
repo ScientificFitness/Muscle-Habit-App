@@ -8,9 +8,12 @@ No account. No backend. Everything stays in your browser (`localStorage`).
 
 | Path | What |
 | --- | --- |
-| `/` | Marketing landing (hero, lead magnet, features, YouTube) |
+| `/` | Marketing landing (hero, Kickstart Guide, enquiry form, YouTube) |
+| `/videos` | Training & evidence video library |
 | `/planner` | Workout planner entry → onboarding or dashboard |
 | `/planner/dashboard` … `/planner/lab` | Full tool (programs, Coach Builder, Habit Lab, etc.) |
+
+Contact: [klimgym@hotmail.com](mailto:klimgym@hotmail.com). Lead + enquiry forms POST via Formspree (set `NEXT_PUBLIC_FORMSPREE_ENDPOINT`) or FormSubmit AJAX to that inbox.
 
 ## Brand
 

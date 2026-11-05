@@ -1,6 +1,8 @@
 import { BrandLogo } from "@/components/BrandLogo";
 import { EmailCapture } from "@/components/marketing/EmailCapture";
+import { EnquiryForm } from "@/components/marketing/EnquiryForm";
 import { LandingNav } from "@/components/marketing/LandingNav";
+import { CONTACT_EMAIL, YOUTUBE_CHANNEL } from "@/lib/contact";
 import { routes } from "@/lib/paths";
 import { Beaker, Dumbbell, LineChart, Play, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
@@ -11,8 +13,6 @@ export const metadata: Metadata = {
   description:
     "Evidence-based lifting splits, adaptive progression, and nutrition protocols designed for real-world consistency. Launch the free workout planner.",
 };
-
-const YOUTUBE = "https://www.youtube.com/@MuscleHabit";
 
 const features = [
   {
@@ -225,10 +225,10 @@ export default function MarketingPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
           <div className="rounded-xl border border-[#0D9488]/30 bg-[#1E293B] p-6 sm:p-8">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F97316]">
-              Free lead magnet
+              Free Kickstart Guide
             </p>
             <h2 className="mt-3 max-w-2xl font-heading text-3xl uppercase tracking-wide text-white sm:text-4xl">
-              Get The 12-Hour Eating Window &amp; Lifting Quickstart Guide
+              Get The 12-Hour Eating Window &amp; Lifting Kickstart Guide
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 sm:text-base">
               Based on the 2026 Frontiers in Nutrition meta-analysis. Keep lifting,
@@ -271,25 +271,63 @@ export default function MarketingPage() {
       <section id="video" className="scroll-mt-24 border-t border-white/5 bg-[#1E293B]/30">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <h2 className="font-heading text-3xl uppercase tracking-wide text-white">
-            Video breakdown
+            Training videos
           </h2>
           <p className="mt-2 max-w-xl text-slate-400">
-            Walk through Coach Builder, the adaptive engine, and the weight-path
-            predictor on the Muscle Habit channel.
+            Evidence library for eating windows, hypertrophy rules, recovery, and
+            habit stacking — curated for busy lifters.
           </p>
-          <a
-            href={YOUTUBE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 flex min-h-[220px] items-center justify-center rounded-xl border border-dashed border-[#0D9488]/40 bg-[#0F172A] transition hover:border-[#0D9488]"
-          >
-            <span className="inline-flex items-center gap-3 text-sm font-semibold text-white">
-              <span className="grid h-14 w-14 place-items-center rounded-full bg-[#F97316] text-white shadow-lg shadow-orange-900/40">
-                <Play className="h-6 w-6 translate-x-0.5" aria-hidden />
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <Link
+              href={routes.videos}
+              className="flex min-h-[160px] flex-1 items-center justify-center rounded-xl border border-[#0D9488]/40 bg-[#0F172A] transition hover:border-[#0D9488]"
+            >
+              <span className="inline-flex items-center gap-3 text-sm font-semibold text-white">
+                <span className="grid h-14 w-14 place-items-center rounded-full bg-[#F97316] text-white shadow-lg shadow-orange-900/40">
+                  <Play className="h-6 w-6 translate-x-0.5" aria-hidden />
+                </span>
+                Open Training Videos library
               </span>
-              Watch on YouTube · @MuscleHabit
-            </span>
-          </a>
+            </Link>
+            <a
+              href={YOUTUBE_CHANNEL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-md border border-white/15 px-5 text-sm font-semibold text-white hover:border-[#0D9488]/50"
+            >
+              YouTube · @MuscleHabit
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Enquiry */}
+      <section id="contact" className="scroll-mt-24 border-t border-white/5 bg-[#0F172A]">
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#F97316]">
+                Contact
+              </p>
+              <h2 className="mt-3 font-heading text-3xl uppercase tracking-wide text-white sm:text-4xl">
+                Enquire with Muscle Habit
+              </h2>
+              <p className="mt-3 text-slate-400">
+                General questions or online personal coaching applications —
+                messages go straight to{" "}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="font-semibold text-[#0D9488] hover:underline"
+                >
+                  {CONTACT_EMAIL}
+                </a>
+                .
+              </p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-[#1E293B] p-6 sm:p-8">
+              <EnquiryForm />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -301,15 +339,24 @@ export default function MarketingPage() {
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-400">
             <a
-              href={YOUTUBE}
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="hover:text-[#0D9488]"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            <Link href={routes.videos} className="hover:text-[#0D9488]">
+              Training Videos
+            </Link>
+            <a
+              href={YOUTUBE_CHANNEL}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-[#0D9488]"
             >
               YouTube · @MuscleHabit
             </a>
-            <Link href={routes.settings} className="hover:text-[#0D9488]">
-              App settings
+            <Link href="#contact" className="hover:text-[#0D9488]">
+              Enquire
             </Link>
             <Link href={routes.planner} className="hover:text-[#F97316]">
               Start Building Your Routine

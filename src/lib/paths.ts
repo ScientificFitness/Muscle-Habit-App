@@ -3,6 +3,7 @@ export const PLANNER = "/planner";
 
 export const routes = {
   home: "/",
+  videos: "/videos",
   planner: PLANNER,
   dashboard: `${PLANNER}/dashboard`,
   programs: `${PLANNER}/programs`,

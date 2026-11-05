@@ -1,10 +1,9 @@
 "use client";
 
 import { BrandLogo } from "@/components/BrandLogo";
+import { YOUTUBE_CHANNEL } from "@/lib/contact";
 import { routes } from "@/lib/paths";
 import Link from "next/link";
-
-const YOUTUBE = "https://www.youtube.com/@MuscleHabit";
 
 export function LandingNav() {
   return (
@@ -18,11 +17,17 @@ export function LandingNav() {
           <BrandLogo size="sm" priority />
         </Link>
         <div className="flex items-center gap-2 sm:gap-3">
+          <Link
+            href={routes.videos}
+            className="hidden text-sm font-medium text-slate-300 transition hover:text-white sm:inline"
+          >
+            Training Videos
+          </Link>
           <a
-            href={YOUTUBE}
+            href={YOUTUBE_CHANNEL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden text-sm font-medium text-slate-300 transition hover:text-white sm:inline"
+            className="hidden text-sm font-medium text-slate-300 transition hover:text-white md:inline"
           >
             YouTube Channel
           </a>

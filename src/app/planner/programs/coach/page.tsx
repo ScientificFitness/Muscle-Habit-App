@@ -9,8 +9,7 @@ import {
   initialCoachState,
   type CoachBuilderState,
 } from "@/lib/coach";
-import { getProgramById } from "@/lib/programs";
-import { validateProgramVolume } from "@/lib/programs";
+import { getProgramById, validateProgramVolume } from "@/lib/programs";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
